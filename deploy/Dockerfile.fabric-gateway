@@ -1,0 +1,9 @@
+FROM node:20-alpine
+WORKDIR /app
+COPY fabric_service/package.json ./
+RUN npm install --omit=dev
+COPY fabric_service/*.js ./
+RUN mkdir -p /app/wallet /app/config
+ENV FABRIC_SERVICE_PORT=5000
+EXPOSE 5000
+CMD ["node", "server.js"]

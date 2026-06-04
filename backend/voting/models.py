@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
+
+# schema definition
 class Party(models.Model):
     name = models.CharField(max_length=200)
     short_name = models.CharField(max_length=50)
